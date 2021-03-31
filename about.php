@@ -10,7 +10,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 ?>
 
 
-    <div class="container mt-5 pt-3">
+    <div class="container">
         <h1>About</h1>
     </div>
 

@@ -58,3 +58,5 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
             </div>
         </div>
     </nav>
+    <!-- Empty margin for spacing between Navbar and content -->
+    <div class="mb-5 pb-3"></div>
