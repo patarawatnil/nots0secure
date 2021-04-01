@@ -10,9 +10,11 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 ?>
 
 
-    <div class="container">
-        <h1>Vulnerability</h1>
-    </div>
+<div class="container">
+    <h1>Vulnerability</h1>
+</div>
+
+<!-- TO-DO -->
 
 <?php 
 
