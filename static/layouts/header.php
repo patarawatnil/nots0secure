@@ -27,7 +27,7 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
         <div class="container">
             <!-- Brand to Home -->
             <a class="navbar-brand" href="<?php echo $TO_ROOT ?>."><img
-                    src="<?php echo $TO_ROOT ?>static/image/logo.png" alt="" width="30" height="24"
+                    src="<?php echo $TO_ROOT ?>static/image/logo.png" alt="nots0secure" width="30" height="24"
                     class="d-inline-block align-text-top">
                 NOTS0SECURE</a>
             <!-- Button when collapse -->
@@ -38,18 +38,20 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
+
                     <!-- Vulnerabilities dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"
-                            id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Vulnerabilities
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                             <!-- SQL Injection -->
-                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sql_injection">SQL Injection</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sql_injection">SQL
+                                    Injection</a></li>
                         </ul>
                     </li>
+                    
                     <!-- About -->
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $TO_ROOT ?>about.php">About</a>

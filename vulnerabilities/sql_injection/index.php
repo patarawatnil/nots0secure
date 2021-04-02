@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // Define WEB_PAGE_TO_ROOT
 define('WEB_PAGE_TO_ROOT', '../../');
@@ -13,29 +13,96 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <div class="container">
     <h1>SQL Injection</h1>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                role="tab" aria-controls="home" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-                role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
-                role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">a</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">b</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">c</div>
+    <!-- Card to contain form -->
+    <div class="card mt-3 mx-auto" style="width: 18rem;">
+        <div class="card-body">
+            <!-- Form -->
+            <form method="get" name="find_userid">
+                <h5 class="card-title">Find User by ID</h5>
+                <!-- Enter user id -->
+                <div class="mt-3">
+                    <label for="userid" class="form-label">User ID</label>
+                    <input type="text" class="form-control" id="userid" name="userid" placeholder="1" required>
+                </div>
+                <!-- Submit -->
+                <div class="mt-3">
+                    <input type="submit" name="Submit" value='Submit' class="btn btn-primary">
+                </div>
+            </form>
+        </div>
     </div>
+    <!-- End of Form -->
+
+    <?php
+    //Include Unsecure Code 
+    include('source/low.php')
+
+    ?>
+
+    <!-- View Help -->
+    <div class="mt-3">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp" aria-expanded="false" aria-controls="viewhelp">
+            View Help
+        </button>
+    </div>
+
+    <div class="collapse" id="viewhelp">
+        <div class="mt-3">
+            <div class="card card-body">
+
+                <p class="fw-bold">Description</p>
+
+                <p>
+                    A SQL injection attack consists of insertion or "injection" of a SQL query via the input data from
+                    the client to
+                    the application. A successful SQL injection exploit can read sensitive data from the database,
+                    modify database
+                    data (insert/update/delete), execute administration operations on the database (such as shutdown the
+                    DBMS),
+                    recover the content of a given file present on the DBMS file system (load_file) and in some cases
+                    issue commands
+                    to the operating system.
+                </p>
+
+                <p>
+                    SQL injection attacks are a type of injection attack, in which SQL commands are injected into
+                    data-plane input
+                    in order to effect the execution of predefined SQL commands.
+                </p>
+
+                <p>
+                    This attack may also be called "SQLi".
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End of View Help -->
+
+    <!--View Source-->
+    <div class="mt-3">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource" aria-expanded="false" aria-controls="viewsource">
+            View Source
+        </button>
+    </div>
+    <div class="collapse" id="viewsource">
+        <div class="mt-3 text-wrap">
+            <div class="card card-body">
+                <code><?php
+                        $source_code = file_get_contents('./source/low.php');
+                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
+                        $source_code = highlight_string($source_code, true);
+
+                        echo $source_code;
+
+                        ?></code>
+            </div>
+        </div>
+    </div>
+    <!--End of View Source-->
 
 </div>
 
-<?php 
+<?php
 
 
 // Include Footer

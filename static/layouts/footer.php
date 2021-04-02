@@ -5,7 +5,7 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
 <!-- Footer -->
 <div class="bg-dark text-light mt-3">
     <div class="container py-3">
-        SOSecure.co.th
+        NOTS0SECURE
     </div>
 </div>
 
