@@ -49,9 +49,11 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                             <!-- SQL Injection -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sql_injection">SQL
                                     Injection</a></li>
+                            <!-- Brute Force -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
                         </ul>
                     </li>
-                    
+
                     <!-- About -->
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $TO_ROOT ?>about.php">About</a>
