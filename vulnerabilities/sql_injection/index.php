@@ -16,7 +16,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <!-- Card to contain form -->
     <div class="card mt-3 mx-auto" style="width: 18rem;">
         <div class="card-body">
-            <!-- Form -->
+            <!-- Form will submit to same page-->
             <form method="get" name="find_userid">
                 <h5 class="card-title">Find User by ID</h5>
                 <!-- Enter user id -->
@@ -33,15 +33,22 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     </div>
     <!-- End of Form -->
 
+<!--View Result-->
+<?php if (isset($_GET['Submit'])) { ?>
+
+    <p class="fw-bold">Result</p>
+    
     <?php
     //Include Unsecure Code 
     include('source/low.php')
 
     ?>
+<?php } ?>
 
     <!-- View Help -->
     <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp" aria-expanded="false" aria-controls="viewhelp">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp"
+            aria-expanded="false" aria-controls="viewhelp">
             View Help
         </button>
     </div>
@@ -80,13 +87,15 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
     <!--View Source-->
     <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource" aria-expanded="false" aria-controls="viewsource">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource"
+            aria-expanded="false" aria-controls="viewsource">
             View Source
         </button>
     </div>
     <div class="collapse" id="viewsource">
         <div class="mt-3 text-wrap">
             <div class="card card-body">
+                <p class="fw-bold">Unsecure SQL Injection Source</p>
                 <code><?php
                         $source_code = file_get_contents('./source/low.php');
                         $source_code = str_replace(array('$html .='), array('echo'), $source_code);
@@ -99,6 +108,50 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         </div>
     </div>
     <!--End of View Source-->
+
+    <!--View Improve Result-->
+    <?php if (isset($_GET['Submit'])) { ?>
+    <div class="mt-3">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimproveresult"
+            aria-expanded="false" aria-controls="viewimproveresult">
+            View Improve Result
+        </button>
+    </div>
+    <div class="collapse" id="viewimproveresult">
+        <div class="card card-body">
+            <div>
+                <?php
+                    include('source/improve.php');
+                    ?>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+    <!--End of View Improve Result-->
+
+    <!--View Improve Source-->
+    <div class="mt-3">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource"
+            aria-expanded="false" aria-controls="viewimprovesource">
+            View Improve Source
+        </button>
+    </div>
+    <div class="collapse" id="viewimprovesource">
+        <div class="mt-3 text-wrap">
+            <div class="card card-body">
+                <p class="fw-bold">Improve SQL Injection Source</p>
+                <code><?php
+                        $source_code = file_get_contents('./source/improve.php');
+                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
+                        $source_code = highlight_string($source_code, true);
+
+                        echo $source_code;
+
+                        ?></code>
+            </div>
+        </div>
+    </div>
+    <!--End of View Improve Source-->
 
 </div>
 
