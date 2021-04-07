@@ -58,7 +58,7 @@ if (isset($_GET['Submit'])) {
                 echo "<div class='mt-3'>This User ID is Not Found</div>";
             } */
             if ($data) {
-                echo "<div class='mt-3'>\n";
+                echo "<div>\n";
                 echo "User ID : " . $userid . "<br />\n";
                 echo "First Name : " . $data['first_name'] . "<br />\n";
                 echo "Last Name : " . $data['last_name'] . "\n";

@@ -95,7 +95,9 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
             $data->execute();
         } else {
             // Login failed
-            sleep(rand(1, 2));
+            if (!isset($_POST['skiptime'])) {
+                sleep(rand(1, 2));
+            }
 
             // Give the user some feedback
             echo "<p>Username and/or password incorrect.</p>";

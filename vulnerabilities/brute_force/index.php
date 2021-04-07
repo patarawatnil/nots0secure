@@ -3,7 +3,7 @@
 // Define WEB_PAGE_TO_ROOT
 define('WEB_PAGE_TO_ROOT', '../../');
 // set Title
-$title = "SQL Injection - NOTS0SECURE";
+$title = "Brute Force - NOTS0SECURE";
 // Include Header
 include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
@@ -22,14 +22,19 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                 <!-- Enter username -->
                 <div class="mt-3">
                     <label for="userid" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username"
-                        required>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
                 </div>
                 <!-- Enter username -->
                 <div class="mt-3">
                     <label for="userid" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password"
-                        placeholder="Enter Password" required>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                </div>
+                <!-- Skip random wait time when incorrect or not -->
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="checkbox" value="skip" id="skiptime" name="skiptime">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Skip random wait time when incorrect
+                    </label>
                 </div>
                 <!-- Submit -->
                 <div class="mt-3">
@@ -44,9 +49,9 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <!--View Result-->
 <?php if (isset($_POST['login'])) { ?>
 
-<div class="fw-bold">Result</div>
+    <div class="fw-bold mt-3">Result</div>
 
-<?php
+    <?php
     //Include Unsecure Code 
     include('source/low.php')
 
@@ -55,28 +60,28 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 <!--View Improve Result-->
 <?php if (isset($_POST['login'])) { ?>
-<div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimproveresult"
-        aria-expanded="false" aria-controls="viewimproveresult">
-        View Improve Result
-    </button>
-</div>
-<div class="collapse" id="viewimproveresult">
-    <div class="card card-body">
-        <div>
-            <?php
-                include('source/improve.php');
-                ?>
+    <div class="mt-3">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimproveresult" aria-expanded="false" aria-controls="viewimproveresult">
+            View Improve Result
+        </button>
+    </div>
+    <div class="collapse" id="viewimproveresult">
+        <div class="mt-3">
+            <div class="card card-body">
+                <div>
+                    <?php
+                    include('source/improve.php');
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 <?php } ?>
 <!--End of View Improve Result-->
 
 <!-- View Help -->
 <div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp"
-        aria-expanded="false" aria-controls="viewhelp">
+    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp" aria-expanded="false" aria-controls="viewhelp">
         View Help
     </button>
 </div>
@@ -119,9 +124,8 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 <!--View Source-->
 <div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource"
-        aria-expanded="false" aria-controls="viewsource">
-        View Source
+    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource" aria-expanded="false" aria-controls="viewsource">
+        View Unsecure Source
     </button>
 </div>
 <div class="collapse" id="viewsource">
@@ -129,13 +133,13 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         <div class="card card-body">
             <h3>Unsecure SQL Injection Source</h3>
             <code><?php
-                        $source_code = file_get_contents('./source/low.php');
-                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                        $source_code = highlight_string($source_code, true);
+                    $source_code = file_get_contents('./source/low.php');
+                    $source_code = str_replace(array('$html .='), array('echo'), $source_code);
+                    $source_code = highlight_string($source_code, true);
 
-                        echo $source_code;
+                    echo $source_code;
 
-                        ?></code>
+                    ?></code>
         </div>
     </div>
 </div>
@@ -143,8 +147,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 <!--View Improve Source-->
 <div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource"
-        aria-expanded="false" aria-controls="viewimprovesource">
+    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource" aria-expanded="false" aria-controls="viewimprovesource">
         View Improve Source
     </button>
 </div>
@@ -153,17 +156,28 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         <div class="card card-body">
             <h3>Improve SQL Injection Source</h3>
             <code><?php
-                        $source_code = file_get_contents('./source/improve.php');
-                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                        $source_code = highlight_string($source_code, true);
+                    $source_code = file_get_contents('./source/improve.php');
+                    $source_code = str_replace(array('$html .='), array('echo'), $source_code);
+                    $source_code = highlight_string($source_code, true);
 
-                        echo $source_code;
+                    echo $source_code;
 
-                        ?></code>
+                    ?></code>
         </div>
     </div>
 </div>
 <!--End of View Improve Source-->
+
+<!-- More Info -->
+<div class="mt-3">
+    <h2>More Infomation</h2>
+    <ul>
+        <li><a href="https://owasp.org/www-community/attacks/Brute_force_attack" target="_blank">Brute Force Attack by
+                OWASP</a></li>
+        <li><a href="https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=656f46ef-9e3c-4c1e-a629-594d76fb5339&CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments" target="_blank">Password Crackers - Ensuring the Security of Your Password </a></li>
+        <li><a href="https://www.sillychicken.co.nz/2011/05/how-to-brute-force-http-forms-in-windows/" target="_blank">How to brute force http forms in windows by sillychicken</a></li>
+    </ul>
+</div>
 
 
 

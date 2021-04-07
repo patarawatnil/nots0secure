@@ -39,7 +39,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <!-- View Result-->
     <?php if (isset($_GET['Submit'])) { ?>
 
-    <div class="fw-bold">Result</div>
+    <div class="fw-bold mt-3">Result</div>
 
     <?php
     //Include Unsecure Code 
@@ -58,11 +58,13 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         </button>
     </div>
     <div class="collapse" id="viewimproveresult">
-        <div class="card card-body">
-            <div>
-                <?php
+        <div class="mt-3">
+            <div class="card card-body">
+                <div>
+                    <?php
                     include('source/improve.php');
                     ?>
+                </div>
             </div>
         </div>
     </div>
@@ -113,7 +115,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <div class="mt-3">
         <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource"
             aria-expanded="false" aria-controls="viewsource">
-            View Source
+            View Unsecure Source
         </button>
     </div>
     <div class="collapse" id="viewsource">
@@ -161,19 +163,18 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <div class="mt-3">
         <h2>More Infomation</h2>
         <ul>
-            <li><a href="https://www.securiteam.com/securityreviews/5DP0N1P76E.html" target="_blank">SQL Injection Walkthrough by
+            <li><a href="https://www.securiteam.com/securityreviews/5DP0N1P76E.html" target="_blank">SQL Injection
+                    Walkthrough by
                     SecuriTeam</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank">SQL injection by Wikipedia</a></li>
-            <li><a href="https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/" target="_blank">SQL Injection Cheat
+            <li><a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank">SQL injection by Wikipedia</a>
+            </li>
+            <li><a href="https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/" target="_blank">SQL
+                    Injection Cheat
                     Sheet by Netsparker</a></li>
-            <li><a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank">SQL Injection by OWASP</a></li>
-            <li><a href="https://bobby-tables.com/" target="_blank">Who is Bobby Tables?</a></li>
+            <li><a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank">SQL Injection by
+                    OWASP</a></li>
+            <li><a href="https://bobby-tables.com/">Who is Bobby Tables?</a></li>
         </ul>
-
-
-
-
-
     </div>
 
 </div>
