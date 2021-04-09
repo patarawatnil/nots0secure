@@ -31,7 +31,7 @@ if( isset( $_POST['login'] ) ) {
 
         if($data){
             // login success
-            echo "<p>Welcome <span class='fw-bold'>$user</span></p>";
+            echo "<p><span class='fw-bold'>Welcome</span> $user</p>";
         } else {
             // login fail
             echo "<p>Username and/or password incorrect.</p>";
@@ -39,7 +39,7 @@ if( isset( $_POST['login'] ) ) {
 
     } catch (PDOException $e) {
         // if exception happen
-        echo "Error: " . $e->getMessage();
+        echo "Error : " . $e->getMessage();
     }
     // close connection
     $conn = null;

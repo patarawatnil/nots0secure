@@ -19,7 +19,7 @@ if (isset($_GET['Submit'])) {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // prepare statement but instead to replace within statement use binding parameter
-            $stmt = $conn->prepare("SELECT user_id, first_name, last_name FROM users WHERE user_id = :userid LIMIT 1");
+            $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = :userid LIMIT 1");
 
             // binding parameter
             $stmt->bindParam(':userid', $userid);

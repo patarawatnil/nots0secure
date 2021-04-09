@@ -23,7 +23,7 @@ if (isset($_REQUEST['Submit'])) {
     * SELECT user_id, first_name, last_name FROM users WHERE user_id = '%' or '0'='0'
     * which return everything because condition is always true
     */
-        $stmt = $conn->prepare("SELECT user_id, first_name, last_name FROM users WHERE user_id = '$userid'");
+        $stmt = $conn->prepare("SELECT first_name, last_name FROM users WHERE user_id = '$userid'");
         // Execute Statement
         $stmt->execute();
 

@@ -24,7 +24,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                     <label for="userid" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
                 </div>
-                <!-- Enter username -->
+                <!-- Enter password -->
                 <div class="mt-3">
                     <label for="userid" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
@@ -32,7 +32,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                 <!-- Skip random wait time when incorrect or not -->
                 <div class="form-check mt-3">
                     <input class="form-check-input" type="checkbox" value="skip" id="skiptime" name="skiptime">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <label class="form-check-label" for="skiptime">
                         Skip random wait time when incorrect
                     </label>
                 </div>

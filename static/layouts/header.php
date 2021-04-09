@@ -14,6 +14,9 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
     <link href="<?php echo $TO_ROOT ?>static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Title -->
+    <?php if (isset($title)) {
+        $title = "NOTS0SECURE";
+    } ?>
     <title><?php echo $title; ?></title>
 
     <!-- favicon-->
@@ -26,14 +29,10 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
         <!-- Container -->
         <div class="container">
             <!-- Brand to Home -->
-            <a class="navbar-brand" href="<?php echo $TO_ROOT ?>."><img
-                    src="<?php echo $TO_ROOT ?>static/image/logo.png" alt="nots0secure" width="30" height="30"
-                    class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="<?php echo $TO_ROOT ?>."><img src="<?php echo $TO_ROOT ?>static/image/logo.png" alt="nots0secure" width="30" height="30" class="d-inline-block align-text-top">
                 NOTS0SECURE</a>
             <!-- Button when collapse -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,8 +40,7 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
 
                     <!-- Vulnerabilities dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Vulnerabilities
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
@@ -53,6 +51,8 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
                             <!-- Reflected Cross Site Scripting (XSS) -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/xss_r">Reflected Cross Site Scripting (XSS)</a></li>
+                            <!-- Reflected Cross Site Scripting (XSS) -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/csrf">Cross Site Request Forgery (CSRF)</a></li>
                         </ul>
                     </li>
 

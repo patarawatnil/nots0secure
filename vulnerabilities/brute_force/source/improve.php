@@ -81,7 +81,7 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
             $last_login   = $row['last_login'];
 
             // Login successful
-            echo "<p>Welcome <span class='fw-bold'>$user</span></p>";
+            echo "<p><span class='fw-bold'>Welcome</span> $user</p>";
 
             // Had the account been locked out since last login?
             if ($failed_login >= $total_failed_login) {
