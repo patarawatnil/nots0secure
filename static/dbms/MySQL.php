@@ -62,7 +62,7 @@ try {
 		('3','Hack','Me','1337',MD5('charley'), NOW(), '0'),
 		('4','Pablo','Picasso','pablo',MD5('letmein'), NOW(), '0'),
 		('5','Bob','Smith','smithy',MD5('password'), NOW(), '0'),
-    ('6','i','am','dummy',MD5('dummy'),NOW(),'0');";
+    ('6','i','am','dummy',MD5('1234'),NOW(),'0');";
   $conn->exec($sql);
   $alert_text .= "Data inserted into 'users' table. \n";
 } catch (PDOException $e) {
