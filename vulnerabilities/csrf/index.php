@@ -15,7 +15,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <p>
     <div>Default Account</div>
     <div>Username : dummy</div>
-    <div>Password : dummy</div>
+    <div>Password : 1234</div>
     </p>
 
     <div class="mt-3">
@@ -82,6 +82,15 @@ include('test_credentials.php');
                     <label for="currentpass" class="form-label">Current password</label>
                     <input type="password" class="form-control" id="currentpass" name="currentpass" placeholder="Enter your current password">
                 </div>
+                <!-- Use Improve -->
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="checkbox" value="useimprove" id="useimprove" name="useimprove">
+                    <label class="form-check-label" for="useimprove">
+                        Use Improve Source Code
+                    </label>
+                    <div id="useimprovehelp" class="form-text">If check will use current password to change password</div>
+                </div>
+                <hr/>
                 <!-- Enter New password -->
                 <div class="mt-3">
                     <label for="newpass" class="form-label">New password</label>
@@ -91,13 +100,6 @@ include('test_credentials.php');
                 <div class="mt-3">
                     <label for="confirmnewpass" class="form-label">Confirm new password</label>
                     <input type="password" class="form-control" id="confirmnewpass" name="confirmnewpass" placeholder="Confirm new password">
-                </div>
-                <!-- Use Improve -->
-                <div class="form-check mt-3">
-                    <input class="form-check-input" type="checkbox" value="useimprove" id="useimprove" name="useimprove">
-                    <label class="form-check-label" for="useimprove">
-                        Use Improve Source Code
-                    </label>
                 </div>
                 <!-- Submit -->
                 <div class="mt-3">
