@@ -2,7 +2,7 @@
 
 if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password'])) {
 
-    // get input
+    // Get input
     // Sanitise username input
     $user = $_POST['username'];
     $user = stripslashes($user);
@@ -14,26 +14,26 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
 
     // Get Database config
     //include(WEB_PAGE_TO_ROOT . 'static/database-config.inc.php');
-    $servername = DB_HOST;
-    $username = DB_USERNAME;
-    $password = DB_PASSWORD;
+    $dbservername = DB_HOST;
+    $dbusername = DB_USERNAME;
+    $dbpassword = DB_PASSWORD;
     $dbname = DB_NAME;
 
-    // Default values
+    // Set Default values
     $total_failed_login = 3;
-    $lockout_time       = 60;
+    $lockout_time       = 60; // second
     $account_locked     = false;
 
     try {
         // make connection to database
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // Check the database (Check user information)
         $data = $conn->prepare('SELECT failed_login, last_login FROM users WHERE user = :user LIMIT 1;');
         $data->bindParam(':user', $user);
         $data->execute();
-        $row = $data->fetch();
+        $row = $data->fetch(); // if empty will return false
 
         // Check to see if the user has been locked out.
         if ($row && ($row['failed_login'] >= $total_failed_login)) {
@@ -73,7 +73,7 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
         $data->bindParam(':user', $user);
         $data->bindParam(':password', $pass);
         $data->execute();
-        $row = $data->fetch();
+        $row = $data->fetch(); // if empty will return false
         // If its a valid login...
         if ($row && (!$account_locked)) {
             // Get users details
@@ -103,13 +103,11 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
             echo "<p>Username and/or password incorrect.</p>";
 
             // Update bad login count
-            //if (!$row) { // if user input correct username and password will not count as failed login
-
             $data = $conn->prepare('UPDATE users SET failed_login = (failed_login + 1) WHERE user = (:user) LIMIT 1;');
             $data->bindParam(':user', $user);
             $data->execute();
-            //}
-            // Tell the user how many chance they have to fail login
+
+            // Tell the user how many chance they have to fail login (This may be vulnerable to reveal username)
             $data = $conn->prepare('SELECT failed_login FROM users WHERE user = :user LIMIT 1;');
             $data->bindParam(':user', $user);
             $data->execute();
@@ -135,3 +133,5 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
     // close connection
     $conn = null;
 }
+
+// This may not prevent DDoS Attack
