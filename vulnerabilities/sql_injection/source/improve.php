@@ -7,14 +7,14 @@ if (isset($_GET['Submit'])) {
     if (is_numeric($userid)) {
         // Get Database config
         //include(WEB_PAGE_TO_ROOT . 'static/database-config.inc.php');
-        $servername = DB_HOST;
-        $username = DB_USERNAME;
-        $password = DB_PASSWORD;
+        $dbservername = DB_HOST;
+        $dbusername = DB_USERNAME;
+        $dbpassword = DB_PASSWORD;
         $dbname = DB_NAME;
 
         // Check database
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

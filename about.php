@@ -3,7 +3,7 @@
 // Define WEB_PAGE_TO_ROOT
 define('WEB_PAGE_TO_ROOT', '');
 // set Title
-$title = "About- NOTS0SECURE";
+$title = "About - NOTS0SECURE";
 // Include Header
 include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 

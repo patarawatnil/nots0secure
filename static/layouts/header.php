@@ -27,7 +27,7 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
         <div class="container">
             <!-- Brand to Home -->
             <a class="navbar-brand" href="<?php echo $TO_ROOT ?>."><img
-                    src="<?php echo $TO_ROOT ?>static/image/logo.png" alt="nots0secure" width="30" height="24"
+                    src="<?php echo $TO_ROOT ?>static/image/logo.png" alt="nots0secure" width="30" height="30"
                     class="d-inline-block align-text-top">
                 NOTS0SECURE</a>
             <!-- Button when collapse -->
@@ -59,6 +59,9 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                         <a class="nav-link" href="<?php echo $TO_ROOT ?>about.php">About</a>
                     </li>
                 </ul>
+                <form method="POST" action="<?php echo $TO_ROOT ?>static/dbms/MySQL.php" class="d-flex">
+                    <button type="submit" name="reset_db" id="reset_db" class="btn btn-outline-light">Setup/Reset Database</button>
+                </form>
             </div>
         </div>
     </nav>
