@@ -51,6 +51,8 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                                     Injection</a></li>
                             <!-- Brute Force -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
+                            <!-- Reflected Cross Site Scripting (XSS) -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/xss_r">Reflected Cross Site Scripting (XSS)</a></li>
                         </ul>
                     </li>
 

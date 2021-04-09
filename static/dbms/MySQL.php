@@ -61,7 +61,8 @@ try {
 		('2','Gordon','Brown','gordonb',MD5('abc123'), NOW(), '0'),
 		('3','Hack','Me','1337',MD5('charley'), NOW(), '0'),
 		('4','Pablo','Picasso','pablo',MD5('letmein'), NOW(), '0'),
-		('5','Bob','Smith','smithy',MD5('password'), NOW(), '0');";
+		('5','Bob','Smith','smithy',MD5('password'), NOW(), '0'),
+    ('6','i','am','dummy',MD5('dummy'),NOW(),'0');";
   $conn->exec($sql);
   $alert_text .= "Data inserted into 'users' table. \n";
 } catch (PDOException $e) {
@@ -74,12 +75,7 @@ try {
 $conn = null;
 
 $alert_text .= "Click 'OK' to go back"
-// die($alert_text);
-// Alert and Go back to previous page
-//echo "<script type='text/javascript'>alert('$alert_text');history.go(-1);</script>";
-// echo '<script language="javascript">';
-// echo 'alert("'.$alert_text.'")';
-// echo '</script>';
+// echo $alert_text;
 ?>
 
 <!-- Alert and Go back to previous page -->

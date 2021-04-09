@@ -180,9 +180,6 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 </div>
 
 <?php
-
-
 // Include Footer
 include(WEB_PAGE_TO_ROOT . 'static/layouts/footer.php');
-
 ?>
