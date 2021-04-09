@@ -49,4 +49,5 @@ if (isset($_POST['changepass'])) {
     //    echo "<div>Passwords did not match.</div>";
     //}
 }
+// if new password and confirm new password is match will change user's password.
 ?>
