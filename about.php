@@ -16,7 +16,6 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 <?php 
 
-
 // Include Footer
 include(WEB_PAGE_TO_ROOT . 'static/layouts/footer.php');
 

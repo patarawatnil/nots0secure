@@ -12,8 +12,8 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <div class="container">
     <h1>Brute Force</h1>
 
+    <!-- Card to contain form -->
     <div class="d-flex justify-content-center align-items-center">
-        <!-- Card to contain form -->
         <div class="card mt-3"">
         <div class=" card-body">
             <!-- Form will submit to same page-->

@@ -12,12 +12,11 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <div class="container">
     <h1>Cross Site Request Forgery (CSRF)</h1>
 
-    <p>
-    <div>Default Account</div>
+    <div><strong>Default Account</strong></div>
     <div>Username : dummy</div>
     <div>Password : 1234</div>
-    </p>
 
+    <!-- Test Credentials -->
     <div class="mt-3">
         <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#testcredentials" aria-expanded="false" aria-controls="testcredentials">
             Test Credentials
@@ -57,21 +56,22 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         </div>
     </div>
 </div>
+<!-- End of Test Credentials -->
 
-<!-- View Result-->
+<!-- View Test Credentials Result-->
 <?php if (isset($_POST['login'])) { ?>
 
 <div class="fw-bold mt-3">Result</div>
 
 <?php
-//Include Unsecure Code 
+//Include Test Credentials Code 
 include('test_credentials.php');
 ?>
 <?php } ?>
-<!-- End of View Result-->
+<!-- End of View Test Credentials Result-->
 
+<!-- Card to contain form -->
 <div class="d-flex justify-content-center align-items-center">
-    <!-- Card to contain form -->
     <div class="card mt-3">
         <div class="card-body">
             <!-- Form will submit to same page-->
@@ -88,7 +88,7 @@ include('test_credentials.php');
                     <label class="form-check-label" for="useimprove">
                         Use Improve Source Code
                     </label>
-                    <div id="useimprovehelp" class="form-text">If check will use current password to change password</div>
+                    <div id="useimprovehelp" class="form-text">If check will use current password to check correction</div>
                 </div>
                 <hr/>
                 <!-- Enter New password -->
