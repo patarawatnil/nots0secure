@@ -12,7 +12,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <div class="container">
     <h1>Cross Site Request Forgery (CSRF)</h1>
 
-    <div><strong>Default Account</strong></div>
+    <div class="fw-bold">Default Account</div>
     <div>Username : dummy</div>
     <div>Password : 1234</div>
 
@@ -190,7 +190,7 @@ include('test_credentials.php');
 <div class="collapse" id="viewsource">
     <div class="mt-3 text-wrap">
         <div class="card card-body">
-            <h3>Unsecure SQL Injection Source</h3>
+            <h3>Unsecure CSRF Source</h3>
             <code><?php
                     $source_code = file_get_contents('./source/low.php');
                     $source_code = str_replace(array('$html .='), array('echo'), $source_code);
@@ -213,7 +213,7 @@ include('test_credentials.php');
 <div class="collapse" id="viewimprovesource">
     <div class="mt-3 text-wrap">
         <div class="card card-body">
-            <h3>Improve SQL Injection Source</h3>
+            <h3>Improve CSRF Source</h3>
             <code><?php
                     $source_code = file_get_contents('./source/improve.php');
                     $source_code = str_replace(array('$html .='), array('echo'), $source_code);

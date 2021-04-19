@@ -70,6 +70,27 @@ try {
   exit($alert_text );
 }
 
+// create table 'guestbook'
+try {
+  $sql = "CREATE TABLE guestbook (comment_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT, comment varchar(300), name varchar(100), PRIMARY KEY (comment_id));";
+  $conn->exec($sql);
+  $alert_text .= "'guestbook' table was created. \n";
+} catch (PDOException $e) {
+  $alert_text = "Unable to create 'guestbook' table : : " . $e->getMessage() . "\n";
+  exit($alert_text );
+}
+
+// Insert data into 'guestbook'
+try {
+  $sql = "INSERT INTO guestbook VALUES ('1','This is a test comment.','test');";
+  $conn->exec($sql);
+  $alert_text .= "Data inserted into 'guestbook' table. \n \n";
+} catch (PDOException $e) {
+  $alert_text = "Unable to insert data into 'guestbook' table : : " . $e->getMessage() . "\n";
+  exit($alert_text );
+}
+
+
 
 // close database
 $conn = null;

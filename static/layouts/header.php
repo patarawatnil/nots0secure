@@ -45,16 +45,17 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                             <!-- SQL Injection -->
-                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sql_injection">SQL
-                                    Injection</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sql_injection">SQL Injection</a></li>
                             <!-- Brute Force -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
+                            <!-- Cross Site Request Forgery (CSRF) -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/csrf">Cross Site Request Forgery (CSRF)</a></li>
                             <!-- DOM Based Cross Site Scripting (XSS) -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/xss_d">DOM Based Cross Site Scripting (XSS)</a></li>
                             <!-- Reflected Cross Site Scripting (XSS) -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/xss_r">Reflected Cross Site Scripting (XSS)</a></li>
-                            <!-- Cross Site Request Forgery (CSRF) -->
-                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/csrf">Cross Site Request Forgery (CSRF)</a></li>
+                            <!-- Stored Cross Site Scripting (XSS) -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/xss_s">Stored Cross Site Scripting (XSS)</a></li>
                         </ul>
                     </li>
 
@@ -69,5 +70,5 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
             </div>
         </div>
     </nav>
-    <!-- Empty margin for spacing between Navbar and content -->
+    <!-- Empty box for spacing between Navbar and content -->
     <div class="mb-5 pb-3"></div>
