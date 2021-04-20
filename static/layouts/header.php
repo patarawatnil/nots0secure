@@ -46,6 +46,8 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                             <!-- SQL Injection -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sql_injection">SQL Injection</a></li>
+                            <!-- SQL Injection (Blind) -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sqli_blind">SQL Injection (Blind)</a></li>
                             <!-- Brute Force -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
                             <!-- Cross Site Request Forgery (CSRF) -->

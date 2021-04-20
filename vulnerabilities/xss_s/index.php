@@ -24,13 +24,13 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                     <div class="mt-3">
                         <label for="txtName" class="form-label">Name</label>
                         <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Enter your name" maxlength="20" required>
-                        <div id="namehelp" class="form-text">Maximun 20 character</div>
+                        <div id="namehelp" class="form-text">Maximum 20 character</div>
                     </div>
                     <!-- Enter comment -->
                     <div class="mt-3">
                         <label for="txtComment" class="form-label">Comment</label>
                         <textarea class="form-control" id="txtComment" name="txtComment" rows="5" placeholder="What's on your mind?" maxlength="100" required></textarea>
-                        <div id="namehelp" class="form-text">Maximun 100 character</div>
+                        <div id="namehelp" class="form-text">Maximum 100 character</div>
                     </div>
                     <!-- Use Improve -->
                     <div class="form-check mt-3">

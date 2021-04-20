@@ -90,7 +90,7 @@ if (isset($_GET['useimprove'])) {
 
     <!-- View Source -->
     <div class="mt-3">
-    <span>This vulnerability has been controlled by protection handled on the client side</span>
+    <span>This vulnerability has been handled on the client side</span>
     </div>
 
     <!-- More Info -->
