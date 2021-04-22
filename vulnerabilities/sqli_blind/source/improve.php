@@ -44,19 +44,6 @@ if (isset($_GET['Submit'])) {
             $data = $stmt->fetch();
 
             // Feedback for end user
-            // make sure only 1 result is returned
-            /* if (count($data) >= 1) {
-                foreach ($data as $row) {
-                    echo "<div class='mt-3'>\n";
-                    // Get values
-                    echo "User ID : " . $userid . "<br />\n";
-                    echo "First Name : " . $row['first_name'] . "<br />\n";
-                    echo "Last Name : " . $row['last_name'] . "\n";
-                    echo "</div>\n";
-                }
-            } else {
-                echo "<div class='mt-3'>This User ID is Not Found</div>";
-            } */
             if ($data) {
                 ?>
             <div class='mt-3'>User ID exists in the database.</div>

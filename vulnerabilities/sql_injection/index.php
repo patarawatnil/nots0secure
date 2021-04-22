@@ -163,16 +163,10 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <div class="mt-3">
         <h2>More Infomation</h2>
         <ul>
-            <li><a href="https://www.securiteam.com/securityreviews/5DP0N1P76E.html" target="_blank">SQL Injection
-                    Walkthrough by
-                    SecuriTeam</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank">SQL injection by Wikipedia</a>
-            </li>
-            <li><a href="https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/" target="_blank">SQL
-                    Injection Cheat
-                    Sheet by Netsparker</a></li>
-            <li><a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank">SQL Injection by
-                    OWASP</a></li>
+            <li><a href="https://www.securiteam.com/securityreviews/5DP0N1P76E.html" target="_blank">SQL Injection Walkthrough by SecuriTeam</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank">SQL injection by Wikipedia</a></li>
+            <li><a href="https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/" target="_blank">SQL Injection Cheat Sheet by Netsparker</a></li>
+            <li><a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank">SQL Injection by OWASP</a></li>
             <li><a href="https://bobby-tables.com/">Who is Bobby Tables?</a></li>
         </ul>
     </div>
