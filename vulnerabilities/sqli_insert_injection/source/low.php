@@ -28,7 +28,7 @@ if (isset($_POST['btnComment'])) {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // insert into database
-        $sql = "INSERT INTO guestbook ( name, comment) VALUES ( '$name, '$message' );";
+        $sql = "INSERT INTO guestbook ( name, comment) VALUES ( '$name', '$message' );";
 
         // Prepare statement
         $stmt = $conn->prepare($sql);
