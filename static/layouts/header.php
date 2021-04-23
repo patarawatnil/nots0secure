@@ -50,6 +50,8 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sqli_blind">SQL Injection (Blind)</a></li>
                             <!-- SQL Injection (Bypass Authentication) -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sqli_bypass_authentication">SQL Injection (Bypass Authentication)</a></li>
+                            <!-- SQL Injection (Insert Injection) -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/sqli_insert_injection">SQL Injection (Insert Injection)</a></li>
                             <!-- Brute Force -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
                             <!-- Cross Site Request Forgery (CSRF) -->
