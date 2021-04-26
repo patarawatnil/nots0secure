@@ -3,28 +3,33 @@
 // Define WEB_PAGE_TO_ROOT
 define('WEB_PAGE_TO_ROOT', '../../');
 // set Title
-$title = "Command Injection - NOTS0SECURE";
+$title = "Weak Session IDs - NOTS0SECURE";
+
+//<!-- Use Source setcookie() function must appear BEFORE the <html> tag -->
+    if (!isset($_POST['useimprove'])) {
+        //Include Unsecure Code 
+        include('source/low.php');
+    } else{
+        //Include Improve Code 
+        include('source/improve.php');
+    }
+    //<!-- End of Source-->
+
 // Include Header
 include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 ?>
 
-
 <div class="container">
-    <h1>Command Injection</h1>
+    <h1>Weak Session IDs</h1>
 
     <!-- Card to contain form -->
     <div class="d-flex justify-content-center align-items-center">
         <div class="card mt-3">
             <div class="card-body">
                 <!-- Form will submit to same page-->
-                <form method="post" name="ping">
-                    <h5 class="card-title">Ping a device</h5>
-                    <!-- Enter name -->
-                    <div class="mt-3">
-                        <label for="ip" class="form-label">IP Address</label>
-                        <input type="text" class="form-control" id="ip" name="ip" placeholder="Enter an IP address" required>
-                    </div>
+                <form method="post" >
+                    <h5 class="card-title">Generate Session ID</h5>
                     <!-- Use Improve -->
                     <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" value="useimprove" id="useimprove" name="useimprove">
@@ -35,23 +40,14 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                     </div>
                     <!-- Submit -->
                     <div class="mt-3">
-                        <input type="submit" name="Submit" value='Submit' class="btn btn-primary">
+                        <div id="generate" class="form-text">This page will set a new cookie called nots0secureSession each time the button is clicked.</div>
+                        <input type="submit" value="Generate" class="btn btn-primary">
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <!-- End of Form -->
-
-    <!-- Use Source-->
-    <?php if (!isset($_POST['useimprove'])) {
-        //Include Unsecure Code 
-        include('source/low.php');
-    } else{
-        //Include Improve Code 
-        include('source/improve.php');
-    }?>
-    <!-- End of Source-->
 
     <!-- View Help -->
     <div class="mt-3">
@@ -67,18 +63,8 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                 <h3>Description</h3>
 
                 <p>
-                The purpose of the command injection attack is to inject and execute commands specified by the attacker in the vulnerable application. In situation like this, the application, which executes unwanted system commands, is like a pseudo system shell, and the attacker may use it as any authorized system user. However, commands are executed with the same privileges and environment as the web service has.
+                Knowledge of a session ID is often the only thing required to access a site as a specific user after they have logged in, if that session ID is able to be calculated or easily guessed, then an attacker will have an easy way to gain access to user accounts without having to brute force passwords or find other vulnerabilities such as Cross-Site Scripting.
                 </p>
-
-                <p>
-                Command injection attacks are possible in most cases because of lack of correct input data validation, which can be manipulated by the attacker (forms, cookies, HTTP headers etc.).
-                </p>
-
-                <p>
-                The syntax and commands may differ between the Operating Systems (OS), such as Linux and Windows, depending on their desired actions.
-                </p>
-
-                <p>This attack may also be called "Remote Command Execution (RCE)".</p>
             </div>
         </div>
     </div>
@@ -134,9 +120,8 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <div class="mt-3">
         <h2>More Infomation</h2>
         <ul>
-            <li><a href="https://ss64.com/bash/" target="_blank">An A-Z Index of the Linux command line</a></li>
-            <li><a href="https://ss64.com/nt/" target="_blank">An A-Z Index of Windows CMD commands</a></li>
-            <li><a href="https://owasp.org/www-community/attacks/Command_Injection" target="_blank">Command Injection by OWASP</a></li>
+            <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/01-Testing_for_Session_Management_Schema" target="_blank">Testing for Session Management Schema by WTSG</a></li>
+            <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html" target="_blank">Session Management Cheat Sheet by OWASP</a></li>
         </ul>
     </div>
 
