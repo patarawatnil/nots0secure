@@ -13,7 +13,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <div class="container">
     <h1>SQL Injection (Blind)</h1>
 
-<!-- Card to contain form -->
+    <!-- Card to contain form -->
     <div class="d-flex justify-content-center align-items-center">
         <div class="card mt-3">
             <div class="card-body">
@@ -23,8 +23,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                     <!-- Enter user id -->
                     <div class="mt-3">
                         <label for="userid" class="form-label">User ID</label>
-                        <input type="text" class="form-control" id="userid" name="userid" placeholder="Enter User ID"
-                            required>
+                        <input type="text" class="form-control" id="userid" name="userid" placeholder="Enter User ID" required>
                     </div>
                     <!-- Submit -->
                     <div class="mt-3">
@@ -39,42 +38,40 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <!-- View Result-->
     <?php if (isset($_GET['Submit'])) { ?>
 
-    <div class="fw-bold mt-3">Result</div>
+        <div class="fw-bold mt-3">Result</div>
 
-    <?php
-    //Include Unsecure Code 
-    include('source/low.php')
+        <?php
+        //Include Unsecure Code 
+        include('source/low.php')
 
-    ?>
+        ?>
     <?php } ?>
     <!-- End of View Result-->
 
     <!--View Improve Result-->
     <?php if (isset($_GET['Submit'])) { ?>
-    <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimproveresult"
-            aria-expanded="false" aria-controls="viewimproveresult">
-            View Improve Result
-        </button>
-    </div>
-    <div class="collapse" id="viewimproveresult">
         <div class="mt-3">
-            <div class="card card-body">
-                <div>
-                    <?php
-                    include('source/improve.php');
-                    ?>
+            <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimproveresult" aria-expanded="false" aria-controls="viewimproveresult">
+                View Improve Result
+            </button>
+        </div>
+        <div class="collapse" id="viewimproveresult">
+            <div class="mt-3">
+                <div class="card card-body">
+                    <div>
+                        <?php
+                        include('source/improve.php');
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <?php } ?>
     <!--End of View Improve Result-->
 
     <!-- View Help -->
     <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp"
-            aria-expanded="false" aria-controls="viewhelp">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp" aria-expanded="false" aria-controls="viewhelp">
             View Help
         </button>
     </div>
@@ -86,11 +83,11 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                 <h3>Description</h3>
 
                 <p>
-                When an attacker executes SQL injection attacks, sometimes the server responds with error messages from the database server complaining that the SQL query's syntax is incorrect. Blind SQL injection is identical to normal SQL Injection except that when an attacker attempts to exploit an application, rather then getting a useful error message, they get a generic page specified by the developer instead. This makes exploiting a potential SQL Injection attack more difficult but not impossible. An attacker can still steal data by asking a series of True and False questions through SQL statements, and monitoring how the web application response (valid entry retunred or 404 header set).
+                    When an attacker executes SQL injection attacks, sometimes the server responds with error messages from the database server complaining that the SQL query's syntax is incorrect. Blind SQL injection is identical to normal SQL Injection except that when an attacker attempts to exploit an application, rather then getting a useful error message, they get a generic page specified by the developer instead. This makes exploiting a potential SQL Injection attack more difficult but not impossible. An attacker can still steal data by asking a series of True and False questions through SQL statements, and monitoring how the web application response (valid entry retunred or 404 header set).
                 </p>
 
                 <p>
-                "time based" injection method is often used when there is no visible feedback in how the page different in its response (hence its a blind attack). This means the attacker will wait to see how long the page takes to response back. If it takes longer than normal, their query was successful.
+                    "time based" injection method is often used when there is no visible feedback in how the page different in its response (hence its a blind attack). This means the attacker will wait to see how long the page takes to response back. If it takes longer than normal, their query was successful.
                 </p>
 
             </div>
@@ -98,53 +95,11 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     </div>
     <!-- End of View Help -->
 
-    <!--View Source-->
-    <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource"
-            aria-expanded="false" aria-controls="viewsource">
-            View Unsecure Source
-        </button>
-    </div>
-    <div class="collapse" id="viewsource">
-        <div class="mt-3 text-wrap">
-            <div class="card card-body">
-                <h3>Unsecure SQL Injection (Blind) Source</h3>
-                <code><?php
-                        $source_code = file_get_contents('./source/low.php');
-                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                        $source_code = highlight_string($source_code, true);
-
-                        echo $source_code;
-
-                        ?></code>
-            </div>
-        </div>
-    </div>
-    <!--End of View Source-->
-
-    <!--View Improve Source-->
-    <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource"
-            aria-expanded="false" aria-controls="viewimprovesource">
-            View Improve Source
-        </button>
-    </div>
-    <div class="collapse" id="viewimprovesource">
-        <div class="mt-3 text-wrap">
-            <div class="card card-body">
-                <h3>Improve SQL Injection (Blind) Source</h3>
-                <code><?php
-                        $source_code = file_get_contents('./source/improve.php');
-                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                        $source_code = highlight_string($source_code, true);
-
-                        echo $source_code;
-
-                        ?></code>
-            </div>
-        </div>
-    </div>
-    <!--End of View Improve Source-->
+    <?php
+    // view source
+    $vulnerability = "SQL Injection (Blind)";
+    include_once(WEB_PAGE_TO_ROOT . "/vulnerabilities/source.php");
+    ?>
 
     <!-- More Info -->
     <div class="mt-3">

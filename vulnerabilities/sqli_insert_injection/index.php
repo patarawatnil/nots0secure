@@ -112,58 +112,18 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     </div>
     <!-- End of View Comment -->
 
-    <!--View Source-->
-    <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource" aria-expanded="false" aria-controls="viewsource">
-            View Unsecure Source
-        </button>
-    </div>
-    <div class="collapse" id="viewsource">
-        <div class="mt-3 text-wrap">
-            <div class="card card-body">
-                <h3>Unsecure SQL Injection Source</h3>
-                <code><?php
-                        $source_code = file_get_contents('./source/low.php');
-                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                        $source_code = highlight_string($source_code, true);
-
-                        echo $source_code;
-
-                        ?></code>
-            </div>
-        </div>
-    </div>
-    <!--End of View Source-->
-
-    <!--View Improve Source-->
-    <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource" aria-expanded="false" aria-controls="viewimprovesource">
-            View Improve Source
-        </button>
-    </div>
-    <div class="collapse" id="viewimprovesource">
-        <div class="mt-3 text-wrap">
-            <div class="card card-body">
-                <h3>Improve SQL Injection Source</h3>
-                <code><?php
-                        $source_code = file_get_contents('./source/improve.php');
-                        $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                        $source_code = highlight_string($source_code, true);
-
-                        echo $source_code;
-
-                        ?></code>
-            </div>
-        </div>
-    </div>
-    <!--End of View Improve Source-->
+    <?php
+    // view source
+    $vulnerability = "SQL Injection (Insert Injection)";
+    include_once(WEB_PAGE_TO_ROOT . "/vulnerabilities/source.php");
+    ?>
 
     <!-- More Info -->
     <div class="mt-3">
         <h2>More Infomation</h2>
         <ul>
             <li><a href="http://amolnaik4.blogspot.com/2012/02/sql-injection-in-insert-query.html" target="_blank">SQL Injection in INSERT Query by AMol NAik</a></li>
-            <li><a href="https://portswigger.net/support/sql-injection-in-different-statement-types" target="_blank">SQL Injection in Different Statement Types by  PortSwigger</a></li>
+            <li><a href="https://portswigger.net/support/sql-injection-in-different-statement-types" target="_blank">SQL Injection in Different Statement Types by PortSwigger</a></li>
         </ul>
     </div>
 

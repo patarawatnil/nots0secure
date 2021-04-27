@@ -72,58 +72,18 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <?php } ?>
 <!--End of View Improve Result-->
 
-<!--View Source-->
-<div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource" aria-expanded="false" aria-controls="viewsource">
-        View Unsecure Source
-    </button>
-</div>
-<div class="collapse" id="viewsource">
-    <div class="mt-3 text-wrap">
-        <div class="card card-body">
-            <h3>Unsecure SQL Injection SQL Injection (Bypass Authentication) Source</h3>
-            <code><?php
-                    $source_code = file_get_contents('./source/low.php');
-                    $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                    $source_code = highlight_string($source_code, true);
-
-                    echo $source_code;
-
-                    ?></code>
-        </div>
-    </div>
-</div>
-<!--End of View Source-->
-
-<!--View Improve Source-->
-<div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource" aria-expanded="false" aria-controls="viewimprovesource">
-        View Improve Source
-    </button>
-</div>
-<div class="collapse" id="viewimprovesource">
-    <div class="mt-3 text-wrap">
-        <div class="card card-body">
-            <h3>Improve SQL Injection SQL Injection (Bypass Authentication) Source</h3>
-            <code><?php
-                    $source_code = file_get_contents('./source/improve.php');
-                    $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                    $source_code = highlight_string($source_code, true);
-
-                    echo $source_code;
-
-                    ?></code>
-        </div>
-    </div>
-</div>
-<!--End of View Improve Source-->
+<?php
+// view source
+$vulnerability = "SQL Injection (Bypass Authentication)";
+include_once(WEB_PAGE_TO_ROOT . "/vulnerabilities/source.php");
+?>
 
 <!-- More Info -->
 <div class="mt-3">
     <h2>More Infomation</h2>
     <ul>
-    <li><a href="https://www.securiteam.com/securityreviews/5DP0N1P76E.html" target="_blank">SQL Injection Walkthrough by SecuriTeam</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank">SQL injection by Wikipedia</a>
+        <li><a href="https://www.securiteam.com/securityreviews/5DP0N1P76E.html" target="_blank">SQL Injection Walkthrough by SecuriTeam</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/SQL_injection" target="_blank">SQL injection by Wikipedia</a>
         <li><a href="https://portswigger.net/support/using-sql-injection-to-bypass-authentication" target="_blank">Using SQL Injection to Bypass Authentication by PortSwigger</a></li>
         <li><a href="http://www.securityidiots.com/Web-Pentest/SQL-Injection/bypass-login-using-sql-injection.html" target="_blank">Login Bypass Using SQL Injection by Security Idiots</a></li>
     </ul>

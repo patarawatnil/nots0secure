@@ -61,12 +61,12 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 <!-- View Test Credentials Result-->
 <?php if (isset($_POST['login'])) { ?>
 
-<div class="fw-bold mt-3">Result</div>
+    <div class="fw-bold mt-3">Result</div>
 
-<?php
-//Include Test Credentials Code 
-include('test_credentials.php');
-?>
+    <?php
+    //Include Test Credentials Code 
+    include('test_credentials.php');
+    ?>
 <?php } ?>
 <!-- End of View Test Credentials Result-->
 
@@ -90,7 +90,7 @@ include('test_credentials.php');
                     </label>
                     <div id="useimprovehelp" class="form-text">If check will use current password to check correction</div>
                 </div>
-                <hr/>
+                <hr />
                 <!-- Enter New password -->
                 <div class="mt-3">
                     <label for="newpass" class="form-label">New password</label>
@@ -181,51 +181,11 @@ include('test_credentials.php');
 </div>
 <!-- End of View Help -->
 
-<!--View Source-->
-<div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewsource" aria-expanded="false" aria-controls="viewsource">
-        View Unsecure Source
-    </button>
-</div>
-<div class="collapse" id="viewsource">
-    <div class="mt-3 text-wrap">
-        <div class="card card-body">
-            <h3>Unsecure CSRF Source</h3>
-            <code><?php
-                    $source_code = file_get_contents('./source/low.php');
-                    $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                    $source_code = highlight_string($source_code, true);
-
-                    echo $source_code;
-
-                    ?></code>
-        </div>
-    </div>
-</div>
-<!--End of View Source-->
-
-<!--View Improve Source-->
-<div class="mt-3">
-    <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimprovesource" aria-expanded="false" aria-controls="viewimprovesource">
-        View Improve Source
-    </button>
-</div>
-<div class="collapse" id="viewimprovesource">
-    <div class="mt-3 text-wrap">
-        <div class="card card-body">
-            <h3>Improve CSRF Source</h3>
-            <code><?php
-                    $source_code = file_get_contents('./source/improve.php');
-                    $source_code = str_replace(array('$html .='), array('echo'), $source_code);
-                    $source_code = highlight_string($source_code, true);
-
-                    echo $source_code;
-
-                    ?></code>
-        </div>
-    </div>
-</div>
-<!--End of View Improve Source-->
+<?php
+// view source
+$vulnerability = "CSRF";
+include_once(WEB_PAGE_TO_ROOT . "/vulnerabilities/source.php");
+?>
 
 <!-- More Info -->
 <div class="mt-3">
