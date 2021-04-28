@@ -56,6 +56,8 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/command_injection">Command Injection</a></li>
                             <!-- Brute Force -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/brute_force">Brute Force</a></li>
+                            <!-- Broken Access Control -->
+                            <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/broken_access_control">Broken Access Control</a></li>
                             <!-- Weak Session IDs -->
                             <li><a class="dropdown-item" href="<?php echo $TO_ROOT ?>vulnerabilities/weak_id">Weak Session IDs</a></li>
                             <!-- Cross Site Request Forgery (CSRF) -->

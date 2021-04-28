@@ -1,15 +1,8 @@
 <?php
-
-if( isset( $_POST['login'] ) ) {
+if(isset($_GET['userid'])){
     // Get username
-    $user = $_POST[ 'username' ];
-    //echo "$user <br/>";
-    // Get password
-    $pass = $_POST[ 'password' ];
-    $pass = md5( $pass );
-    //echo "$pass";
+    $userid = $_GET['userid'];
 
-    
     // Get Database config
     include(WEB_PAGE_TO_ROOT . 'static/database-config.inc.php');
     $dbservername = DB_HOST;
@@ -17,24 +10,25 @@ if( isset( $_POST['login'] ) ) {
     $dbpassword = DB_PASSWORD;
     $dbname = DB_NAME;
 
-    // Check the database
-    try {
+     // Check the database
+     try {
         $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // query
-        $stmt = $conn->prepare("SELECT * FROM users WHERE user = :username AND password = :password LIMIT 1;");
-        $stmt->bindParam(':username', $user);
-        $stmt->bindParam(':password', $pass);
+        $stmt = $conn->prepare("SELECT first_name, last_name, user FROM users WHERE user_id = :userid LIMIT 1;");
+        $stmt->bindParam(':userid', $userid);
         $stmt->execute();
         $data = $stmt->fetch();
 
         if($data){
-            // login success
-            echo "<p><span class='fw-bold'>Welcome</span> $user</p>";
-        } else {
-            // login fail
-            echo "<p>Username and/or password incorrect.</p>";
+            ?>
+            <div class="mt-3">
+            <div>Username : <?php echo $data['user']; ?></div>
+            <div>First Name : <?php echo $data['first_name']; ?></div>
+            <div>Last Name : <?php echo $data['last_name']; ?></div>
+            </div>
+            <?php
         }
 
     } catch (PDOException $e) {
@@ -43,7 +37,5 @@ if( isset( $_POST['login'] ) ) {
     }
     // close connection
     $conn = null;
-
 }
-
 ?>

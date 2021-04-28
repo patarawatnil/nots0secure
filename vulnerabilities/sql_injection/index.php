@@ -45,11 +45,9 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         include('source/low.php')
 
         ?>
-    <?php } ?>
     <!-- End of View Result-->
 
     <!--View Improve Result-->
-    <?php if (isset($_GET['Submit'])) { ?>
         <div class="mt-3">
             <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewimproveresult" aria-expanded="false" aria-controls="viewimproveresult">
                 View Improve Result
