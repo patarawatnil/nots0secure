@@ -42,7 +42,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
         <?php
         //Include Unsecure Code 
-        include('source/low.php')
+        include('source/low.php');
 
         ?>
     <!-- End of View Result-->
