@@ -27,7 +27,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
             <div class="card-body">
                 <!-- Form will submit to same page-->
                 <h5 class="card-title">Select File to view</h5>
-                <div class=\"vulnerable_code_area\">
+                <div>
                     [<em><a href="?page=file1.php">file1.php</a></em>] - [<em><a href="?page=file2.php">file2.php</a></em>] - [<em><a href="?page=file3.php">file3.php</a></em>]
                 </div>
             </div>
@@ -37,8 +37,6 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
     <!-- View Result-->
     <?php if (isset($_GET['page'])) { ?>
-
-        <div class="fw-bold mt-3">Result</div>
 
         <?php
         //Include Unsecure Code 
