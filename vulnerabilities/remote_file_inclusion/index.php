@@ -3,7 +3,7 @@
 // Define WEB_PAGE_TO_ROOT
 define('WEB_PAGE_TO_ROOT', '../../');
 // set Title
-$title = "File Inclusion - NOTS0SECURE";
+$title = "Remote File Inclusion - NOTS0SECURE";
 // Include Header
 include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
@@ -11,7 +11,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 
 <div class="container">
-    <h1>File Inclusion</h1>
+    <h1>Remote File Inclusion</h1>
     <?php
     // Check if the right PHP functions are enabled
     if (!ini_get('allow_url_include')) { ?>
@@ -70,43 +70,9 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
     <?php } ?>
     <!--End of View Improve Result-->
 
-    <!-- View Help -->
-    <div class="mt-3">
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#viewhelp" aria-expanded="false" aria-controls="viewhelp">
-            View Help
-        </button>
-    </div>
-
-    <div class="collapse" id="viewhelp">
-        <div class="mt-3">
-            <div class="card card-body">
-
-                <h3>Description</h3>
-
-                <p>
-                    Some web applications allow the user to specify input that is used directly into file streams or allows the user to upload files to the server. At a later time the web application accesses the user supplied input in the web applications context. By doing this, the web application is allowing the potential for malicious file execution.
-                </p>
-
-                <p>
-                    If the file chosen to be included is local on the target machine, it is called "Local File Inclusion (LFI). But files may also be included on other machines, which then the attack is a "Remote File Inclusion (RFI).
-                </p>
-
-                <p>
-                    When RFI is not an option. using another vulnerability with LFI (such as file upload and directory traversal) can often achieve the same effect.
-                </p>
-
-                <p>
-                    Note, the term "file inclusion" is not the same as "arbitrary file access" or "file disclosure".
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End of View Help -->
-
-
     <?php
     // view source
-    $vulnerability = "File Inclusion";
+    $vulnerability = "Remote File Inclusion";
     include_once(WEB_PAGE_TO_ROOT . "/vulnerabilities/source.php");
     ?>
 

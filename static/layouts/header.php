@@ -75,6 +75,10 @@ $TO_ROOT = constant("WEB_PAGE_TO_ROOT");
                         </ul>
                     </li>
 
+                    <!-- PHP Info -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $TO_ROOT ?>phpinfo.php">PHP Info</a>
+                    </li>
                     <!-- About -->
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $TO_ROOT ?>about.php">About</a>

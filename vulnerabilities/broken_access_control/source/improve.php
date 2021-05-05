@@ -3,8 +3,9 @@ if (isset($_GET['userid'])) {
     // Get username
     $userid = $_GET['userid'];
 
-    // To Check that input and session have same value.
+    // In this case will define user that login
     $_SESSION['login'] = 6;
+    // To Check that input and session have same value.
     if ($_SESSION['login'] == $userid) {
 
 

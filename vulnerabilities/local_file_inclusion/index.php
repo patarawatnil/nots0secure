@@ -3,7 +3,7 @@
 // Define WEB_PAGE_TO_ROOT
 define('WEB_PAGE_TO_ROOT', '../../');
 // set Title
-$title = "File Inclusion - NOTS0SECURE";
+$title = "Local File Inclusion - NOTS0SECURE";
 // Include Header
 include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
@@ -11,7 +11,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 
 <div class="container">
-    <h1>File Inclusion</h1>
+    <h1>Local File Inclusion</h1>
     <?php
     // Check if the right PHP functions are enabled
     if (!ini_get('allow_url_include')) { ?>
@@ -28,7 +28,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
                 <!-- Form will submit to same page-->
                 <h5 class="card-title">Select File to view</h5>
                 <div>
-                    [<em><a href="?page=file1.php">file1.php</a></em>] - [<em><a href="?page=file2.php">file2.php</a></em>] - [<em><a href="?page=file3.php">file3.php</a></em>]
+                    [<a href="?page=file1.php">file1.php</a>] - [<a href="?page=file2.php">file2.php</a>] - [<a href="?page=file3.php">file3.php</a>]
                 </div>
             </div>
         </div>
@@ -105,7 +105,7 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
     <?php
     // view source
-    $vulnerability = "File Inclusion";
+    $vulnerability = "Local File Inclusion";
     include_once(WEB_PAGE_TO_ROOT . "/vulnerabilities/source.php");
     ?>
 
@@ -116,7 +116,6 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
         <ul>
             <li><a href="https://en.wikipedia.org/wiki/File_inclusion_vulnerability" target="_blank">File inclusion vulnerability by Wikipedia</a></li>
             <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.1-Testing_for_Local_File_Inclusion" target="_blank">Testing for Local File Inclusion by OWASP</a></li>
-            <li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion" target="_blank">Testing for Remote File Inclusion by OWASP</a></li>
         </ul>
     </div>
 

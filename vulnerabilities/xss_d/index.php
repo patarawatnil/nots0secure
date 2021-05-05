@@ -47,7 +47,7 @@ if (isset($_GET['useimprove'])) {
                         <label class="form-check-label" for="useimprove">
                             Use Improve Client Side
                         </label>
-                        <div id="useimprovehelp" class="form-text">If check will use improve</div>
+                        <div id="useimprovehelp" class="form-text">If check will use improve source</div>
                     </div>
                     <!-- Submit -->
                     <div class="mt-3">
