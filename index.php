@@ -11,12 +11,16 @@ include(WEB_PAGE_TO_ROOT . 'static/layouts/header.php');
 
 
 <div class="container">
+    <div class="text-center p-5">
+    <img class="d-block mx-auto my-3" src="static/image/logo.png" width="72" height="72">
     <h1>NOTS0SECURE</h1>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ex non tincidunt ultricies. Suspendisse laoreet consectetur enim, at egestas augue dignissim id. Sed at turpis suscipit, egestas ipsum in, luctus urna. Sed neque massa, ultricies sit amet libero a, volutpat fringilla massa. Nunc vulputate rhoncus hendrerit. Sed commodo porttitor erat, ut tincidunt diam sagittis vitae. Sed fringilla purus nec dictum sodales. Curabitur convallis ipsum eu felis tempor rhoncus. Suspendisse vel lacus nec orci auctor sodales.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ex non tincidunt ultricies. Suspendisse laoreet consectetur enim, at egestas augue dignissim id. Sed at turpis suscipit, egestas ipsum in, luctus urna. Sed neque massa, ultricies sit amet libero a, volutpat fringilla massa. Nunc vulputate rhoncus hendrerit. Sed commodo porttitor erat, ut tincidunt diam sagittis vitae. Sed fringilla purus nec dictum sodales. Curabitur convallis ipsum eu felis tempor rhoncus. Suspendisse vel lacus nec orci auctor sodales.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ex non tincidunt ultricies. Suspendisse laoreet consectetur enim, at egestas augue dignissim id. Sed at turpis suscipit, egestas ipsum in, luctus urna. Sed neque massa, ultricies sit amet libero a, volutpat fringilla massa. Nunc vulputate rhoncus hendrerit. Sed commodo porttitor erat, ut tincidunt diam sagittis vitae. Sed fringilla purus nec dictum sodales. Curabitur convallis ipsum eu felis tempor rhoncus. Suspendisse vel lacus nec orci auctor sodales.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer suscipit ex non tincidunt ultricies. Suspendisse laoreet consectetur enim, at egestas augue dignissim id. Sed at turpis suscipit, egestas ipsum in, luctus urna. Sed neque massa, ultricies sit amet libero a, volutpat fringilla massa. Nunc vulputate rhoncus hendrerit. Sed commodo porttitor erat, ut tincidunt diam sagittis vitae. Sed fringilla purus nec dictum sodales. Curabitur convallis ipsum eu felis tempor rhoncus. Suspendisse vel lacus nec orci auctor sodales.</p>
+    <hr/>
+    <div class="mt-3">
+    <p class="lead">
+NOTS0SECURE is a vulnerable PHP/MySQL web application. It focus on responseive user interface and simple to explode the vulnerabilities in unsecure and more secure process. Furthermore, help web developers and who have interested in website sucurity to understand the processes of secureing web applications. 
+    </p>
+    </div>
+    </div>
 </div>
 
 <?php 
